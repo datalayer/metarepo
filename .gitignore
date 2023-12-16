@@ -1,0 +1,22 @@
+# Copyright (c) Datalayer, Inc. https://datalayer.io
+# Distributed under the terms of the MIT License.
+
+# Check with git check-ignore -v **/*
+
+# Exclude
+.yarn
+node_modules
+yarn.lock
+packages/jupyter-*
+
+# Include
+!**/.*ignore
+!**/.*rc
+!**/.*rc.js
+!**/.*rc.json
+!**/.*rc.yml
+!**/.*config
+!*.*rc.json
+!**/.env
+!.github
+!.devcontainer

@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+# Copyright (c) Datalayer, Inc. https://datalayer.io
+# Distributed under the terms of the MIT License.
+
+# set -e
+
+declare -a repos
+
+repos+=("jupyter-iam|packages/jupyter-iam|https://github.com/datalayer/jupyter-iam.git")
+repos+=("jupyter-kernels|packages/jupyter-kernels|https://github.com/datalayer/jupyter-kernels.git")
+repos+=("jupyter-ui|packages/jupyter-ui|https://github.com/datalayer/jupyter-ui.git")
+
+do_clone() {
+  echo "CLONE"
+  echo
+  CUR=$PWD
+  cd packages
+  git clone $3 $1
+  cd $CUR
+}
+
+get_status() {
+  echo "STATUS"
+  echo
+  CUR=$PWD
+  cd $2
+  git remote -v
+  git status
+  cd $CUR
+}
+
+do_commit() {
+  echo "COMMIT"
+  echo
+  CUR=$PWD
+  cd $2
+  git add -A
+  git commit -am "chore: message"
+  git push origin main
+  cd $CUR
+}
+
+COMMAND=$1
+
+for repo in ${repos[@]}
+do
+  IFS='|' read -ra R <<< "$repo"
+  i=${R[0]}
+  j=${R[1]}
+  k=${R[2]}
+  echo "================================================================================"
+  echo "$i | $j | $k"
+  echo "---------"
+  if [[ "$COMMAND" = "clone" ]]
+  then
+    do_clone $i $j $k
+  fi
+  if [[ "$COMMAND" = "status" ]]
+  then
+    get_status $i $j $k
+  fi
+  if [[ "$COMMAND" = "commit" ]]
+  then
+    do_commit $i $j $k
+  fi
+  echo
+done
