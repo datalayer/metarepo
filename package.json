@@ -10,7 +10,8 @@
     "./packages/jupyter-iam",
     "./packages/jupyter-kernels",
     "./packages/jupyter-ui/packages/lite/*",
-    "./packages/jupyter-ui/packages/react"
+    "./packages/jupyter-ui/packages/react",
+    "./packages/jupyter-ui/storybook"
   ],
   "devDependencies": {
     "concurrently": "6.2.0",
