@@ -36,9 +36,9 @@ git clone https://github.com/datalayer/metarepo.git
 cd metarepo
 ```
 
-Update the [metarapo](https://github.com/datalayer/metarepo/blob/main/metarepo#L10) file to list the public and private repositories you intend to work on.
+Update the [metarepo](https://github.com/datalayer/metarepo/blob/main/metarepo#L10) file to list the public and private repositories you intend to work on.
 
-Review the `patches` folder and put there any patch you would need for the `node_modules` packagesd.
+Review the `patches` folder and put there any patch you would need for the `node_modules` packages.
 
 ```bash
 # Clone the listed repositories.
@@ -53,8 +53,7 @@ yarn build
 
 ```bash
 # Watch.
-yarn
-yarn build
+yarn watch
 ```
 
 Add any other command in the root `package.json`.
