@@ -1,0 +1,20 @@
+# Copyright (c) Datalayer, Inc. https://datalayer.io
+# Distributed under the terms of the MIT License.
+
+name: datalayer
+channels:
+  - conda-forge
+dependencies:
+  - jq
+  - nodejs=18.17.1
+  - pip
+  - pycurl
+  - pylint
+  - python=3.10
+  - yarn=3.5.0
+  - pip:
+    - build
+    - hatch
+    - jupyter-packaging
+    - jupyterlab==4.0.3
+    - twine

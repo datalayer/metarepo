@@ -4,7 +4,8 @@
   "scripts": {
     "build": "lerna run --scope '@datalayer/*' build",
     "ls": "lerna ls",
-    "postinstall": "patch-package --use-yarn"
+    "postinstall": "patch-package --use-yarn",
+    "watch": "lerna watch"
   },
   "workspaces": [
     "./packages/jupyter-iam",
