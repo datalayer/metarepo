@@ -10,13 +10,22 @@ This is particularly useful for JavaScript and TypeScript based projects, and we
 
 For now, we don't intend to add `git submodule` related features, although this is being discussed in https://github.com/datalayer/metarepo/issues/2.
 
-## Requirements
+## Usage
 
-The primary usage at Datalayer being JupyterLab development, we rely on [Yarn 3](https://yarnpkg.com) and Python. We have prepared a Conda environment to get you started. You will need [MiniConda](https://docs.conda.io/en/latest/miniconda.html)
+The primary usage at Datalayer being JupyterLab development, we rely on [Yarn 3](https://yarnpkg.com) and Python. To start setting up your environment follow the instructions hereunder.
+
+First, clone this repository.
+```bash
+# Clone the metarepo repository.
+git clone https://github.com/datalayer/metarepo.git
+cd metarepo
+```
+
+Then, create your environment. You will need [MiniConda](https://docs.conda.io/en/latest/miniconda.html)
 
 ```bash
 # Create and activate the environment.
-conda env create -y -n datalayer -f ./environment.yml
+conda env create -n datalayer -f ./environment.yml
 conda activate datalayer
 ```
 
@@ -28,15 +37,7 @@ micromamba env create -y -n datalayer -f ./environment.yml
 micromamba activate datalayer
 ```
 
-## Usage
-
-```bash
-# Clone the metarepo repository.
-git clone https://github.com/datalayer/metarepo.git
-cd metarepo
-```
-
-Update the [metarepo](https://github.com/datalayer/metarepo/blob/main/metarepo#L10) file to list the public and private repositories you intend to work on.
+After creating and activating your virtual environment, update the [metarepo](https://github.com/datalayer/metarepo/blob/main/metarepo#L10) file to list the public and private repositories you intend to work on.
 
 Review the `patches` folder and put there any patch you would need for the `node_modules` packages.
 
