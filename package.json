@@ -8,10 +8,7 @@
     "watch": "lerna watch"
   },
   "workspaces": [
-    "./packages/jupyter-iam",
-    "./packages/jupyter-kernels",
-    "./packages/jupyter-ui/packages/lite/*",
-    "./packages/jupyter-ui/packages/react"
+    "./packages/*"
   ],
   "devDependencies": {
     "concurrently": "6.2.0",
