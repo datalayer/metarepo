@@ -41,7 +41,7 @@ Update the [metarapo](https://github.com/datalayer/metarepo/blob/main/metarepo#L
 Review the `patches` folder and put there any patch you would need for the `node_modules` packagesd.
 
 ```bash
-# Clone the repositories
+# Clone the listed repositories.
 ./metarepo clone
 ```
 
