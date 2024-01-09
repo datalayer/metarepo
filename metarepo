@@ -7,9 +7,9 @@
 
 declare -a repos
 
-repos+=("jupyter-iam|packages/jupyter-iam|https://github.com/datalayer/jupyter-iam.git")
-repos+=("jupyter-kernels|packages/jupyter-kernels|https://github.com/datalayer/jupyter-kernels.git")
-repos+=("jupyter-ui|packages/jupyter-ui|https://github.com/datalayer/jupyter-ui.git")
+repos+=("jupyter-iam|packages/jupyter-iam|git@github.com:/datalayer/jupyter-iam.git")
+repos+=("jupyter-kernels|packages/jupyter-kernels|git@github.com:/datalayer/jupyter-kernels.git")
+repos+=("jupyter-ui|packages/jupyter-ui|git@github.com:/datalayer/jupyter-ui.git")
 
 do_clone() {
   echo "CLONE"
