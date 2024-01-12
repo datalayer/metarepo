@@ -9,7 +9,6 @@
   },
   "workspaces": [
     "./packages/*",
-    "./packages/jupyter-ui/packages/lite/*",
     "./packages/jupyter-ui/packages/react"
   ],
   "devDependencies": {
