@@ -46,6 +46,8 @@ Review the `patches` folder and put there any patch you would need for the `node
 ./metarepo clone
 ```
 
+Install and build (yarn does not seem to manage correctly the dependencies between projects, so you will have to run `yarn build` multiple times, or go manually in the subfolders which need to be built first).
+
 ```bash
 # Install and build.
 yarn
