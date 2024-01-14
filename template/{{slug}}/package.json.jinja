@@ -9,7 +9,7 @@
   },
   "workspaces": [
     "./packages/*",
-    "./packages/jupyter-ui/packages/react"
+    {% if "jupyter-ui" in repos %}"./packages/jupyter-ui/packages/react"{% endif %}
   ],
   "devDependencies": {
     "concurrently": "6.2.0",

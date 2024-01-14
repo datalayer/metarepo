@@ -7,12 +7,12 @@
 
 declare -a repos
 
-repos+=("jupyter-iam|packages/jupyter-iam|https://github.com/datalayer/jupyter-iam.git")
-repos+=("jupyter-content|packages/jupyter-content|https://github.com/datalayer/jupyter-content.git")
-repos+=("jupyter-environments|packages/jupyter-environments|https://github.com/datalayer/jupyter-environments.git")
-repos+=("jupyterpool|packages/jupyterpool|https://github.com/datalayer/jupyterpool.git")
-repos+=("jupyter-kernels|packages/jupyter-kernels|https://github.com/datalayer/jupyter-kernels.git")
-repos+=("jupyter-ui|packages/jupyter-ui|https://github.com/datalayer/jupyter-ui.git")
+selected_repos=($(echo "{{ extended_repos }}" | tr -d "[],'" ))
+
+for repo in ${selected_repos[@]}
+do
+	repos+=($repo)
+done
 
 do_clone() {
   echo "CLONE"

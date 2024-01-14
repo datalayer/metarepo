@@ -1,0 +1,36 @@
+# Set subdirectory to use as template root
+_subdirectory: template
+
+# Include jinja extensions
+_jinja_extensions:
+    - copier_templates_extensions.TemplateExtensionLoader
+    - extensions/context.py:ContextUpdater
+
+# Questions
+project_name:
+    type: str
+    help: Your project name
+
+repos:
+    type: str
+    choices:
+        datalayer (pubic): datalayer
+        jupyter-kernels (private): jupyter-kernels
+        jupyter-iam (private): jupyter-iam
+        jupyter-ui (public): jupyter-ui
+        clouder (public): clouder
+        jupyter-manager (public): jupyter-manager
+        jupyter-dashboard (public): jupyter-dashboard
+        jupyter-viewer (public): jupyter-viewer
+    help: Choose the repositories you intend to work on. Please be aware that the options encompass private repositories. If you opt for private repositories, ensure you possess the necessary permissions to clone them; otherwise, you won't be able to establish the required links. 
+    multiselect: true
+
+ssh:
+    type: bool
+    default: false
+    help: Whether or not to use ssh to clone the repositories
+
+slug:
+    type: str
+    default: "{% from pathjoin('includes', 'slugify.jinja') import slugify %}{{ slugify(project_name) }}"
+    when: false
