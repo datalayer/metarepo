@@ -22,7 +22,7 @@
     "@datalayer/jupyter-environments": "workspace:^",
     "@datalayer/jupyter-iam": "workspace:^",
     "@datalayer/jupyterpool": "workspace:^",
-    "@datalayer/jupyter-ui": "workspace:^",
+    "@datalayer/jupyter-react": "workspace:^",
     "@jest/core": "29.4.3",
     "@jest/transform": "29.4.3",
     "@jupyter-widgets/base": "6.0.6",

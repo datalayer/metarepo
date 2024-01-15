@@ -15,6 +15,7 @@ For now, we don't intend to add `git submodule` related features, although this 
 The primary usage at Datalayer being JupyterLab development, we rely on [Yarn 3](https://yarnpkg.com) and Python. To start setting up your environment follow the instructions hereunder.
 
 First, clone this repository.
+
 ```bash
 # Clone the metarepo repository.
 git clone https://github.com/datalayer/metarepo.git
@@ -24,7 +25,7 @@ cd metarepo
 Then, create your environment. You will need [MiniConda](https://docs.conda.io/en/latest/miniconda.html)
 
 ```bash
-# Create and activate the environment.
+# Create and activate the conda environment.
 conda env create -n datalayer -f ./environment.yml
 conda activate datalayer
 ```
@@ -32,30 +33,37 @@ conda activate datalayer
 [MicroMamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html) is an alternative to Conda.
 
 ```bash
-# Create and activate the environment.
+# Create and activate the mamba environment.
 micromamba env create -y -n datalayer -f ./environment.yml
 micromamba activate datalayer
 ```
 
 After creating and activating your virtual environment, update the [metarepo](https://github.com/datalayer/metarepo/blob/main/metarepo#L10) file to list the public and private repositories you intend to work on.
 
-Review the `patches` folder and put there any patch you would need for the `node_modules` packages.
-
 ```bash
 # Clone the listed repositories.
 ./metarepo clone
 ```
 
-Install and build (yarn does not seem to manage correctly the dependencies between projects, so you will have to run `yarn build` multiple times, or go manually in the subfolders which need to be built first).
+Review the `patches` folder and put there any patch you would need for the `node_modules` packages.
+
+> PS: We depend for now on Lerna 6, we are dicussing the tradeoffs to upgrade to the latest Lerna https://github.com/datalayer/metarepo/issues/12 (cfr. gitignore).
+
+Install the npm dependencies.
 
 ```bash
-# Install and build.
-yarn
 yarn build
 ```
 
+Build.
+
 ```bash
-# Watch.
+yarn build
+```
+
+You can also watch.
+
+```bash
 yarn watch
 ```
 
