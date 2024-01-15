@@ -2,7 +2,7 @@
   "name": "@datalayer/metarepo",
   "private": true,
   "scripts": {
-    "build": "lerna run --scope '@datalayer/*' build",
+    "build": "lerna run --scope '@datalayer/*' --concurrency 1 build",
     "ls": "lerna ls",
     "postinstall": "patch-package --use-yarn",
     "watch": "lerna watch"
@@ -18,6 +18,11 @@
     "patch-package": "8.0.0"
   },
   "resolutions": {
+    "@datalayer/jupyter-contents": "workspace:^",
+    "@datalayer/jupyter-environments": "workspace:^",
+    "@datalayer/jupyter-iam": "workspace:^",
+    "@datalayer/jupyterpool": "workspace:^",
+    "@datalayer/jupyter-ui": "workspace:^",
     "@jest/core": "29.4.3",
     "@jest/transform": "29.4.3",
     "@jupyter-widgets/base": "6.0.6",
