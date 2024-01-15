@@ -47,8 +47,6 @@ After creating and activating your virtual environment, update the [metarepo](ht
 
 Review the `patches` folder and put there any patch you would need for the `node_modules` packages.
 
-> PS: We depend for now on Lerna 6, we are dicussing the tradeoffs to upgrade to the latest Lerna https://github.com/datalayer/metarepo/issues/12 (cfr. gitignore).
-
 Install the npm dependencies.
 
 ```bash

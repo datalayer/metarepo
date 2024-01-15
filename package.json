@@ -1,28 +1,23 @@
 {
   "name": "@datalayer/metarepo",
   "private": true,
+  "workspaces": [
+    "packages/*",
+    "packages/jupyter-ui/packages/react"
+  ],
   "scripts": {
-    "build": "lerna run --scope '@datalayer/*' --concurrency 1 build",
+    "build": "lerna run --concurrency 1 build",
     "ls": "lerna ls",
     "postinstall": "patch-package --use-yarn",
-    "watch": "lerna watch"
+    "watch": "lerna run watch"
   },
-  "workspaces": [
-    "./packages/*",
-    "./packages/jupyter-ui/packages/react"
-  ],
   "devDependencies": {
     "concurrently": "6.2.0",
-    "lerna": "6.6.2",
+    "lerna": "8.0.2",
     "npm-run-all": "4.1.5",
     "patch-package": "8.0.0"
   },
   "resolutions": {
-    "@datalayer/jupyter-contents": "workspace:^",
-    "@datalayer/jupyter-environments": "workspace:^",
-    "@datalayer/jupyter-iam": "workspace:^",
-    "@datalayer/jupyterpool": "workspace:^",
-    "@datalayer/jupyter-react": "workspace:^",
     "@jest/core": "29.4.3",
     "@jest/transform": "29.4.3",
     "@jupyter-widgets/base": "6.0.6",
