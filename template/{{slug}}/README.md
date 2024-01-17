@@ -27,7 +27,7 @@ Ensure that you are in the metarepo's working directory
 To create your environment, you will need [MiniConda](https://docs.conda.io/en/latest/miniconda.html):
 
 ```bash
-# Create and activate the environment.
+# Create and activate the conda environment.
 conda env create -n datalayer -f ./environment.yml
 conda activate datalayer
 ```
@@ -35,7 +35,7 @@ conda activate datalayer
 Alternatively, you can use [MicroMamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html):
 
 ```bash
-# Create and activate the environment.
+# Create and activate the mamba environment.
 micromamba env create -y -n datalayer -f ./environment.yml
 micromamba activate datalayer
 ```
