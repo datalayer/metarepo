@@ -2,8 +2,7 @@
   "name": "@datalayer/metarepo",
   "private": true,
   "workspaces": [
-    "packages/*",
-    {% if "jupyter-ui" in repos %}"packages/jupyter-ui/packages/react"{% endif %}
+    "packages/*"{% if "jupyter-ui" in repos %}, "packages/jupyter-ui/packages/react"{% endif %}
   ],
   "scripts": {
     "build": "lerna run --concurrency 1 build",
