@@ -17,7 +17,11 @@ The following section provides a step-by-step guide on how to generate your scaf
 
 ### Install Copier
 
-Ensure that Copier is correctly installed by following the instructions in the [official documentation](https://copier.readthedocs.io/en/stable/#installation).
+Ensure that Copier (`copier` and `copier-templates-extensions`) is correctly installed by following the instructions in the [official documentation](https://copier.readthedocs.io/en/stable/#installation). You will e.g. pip install the packages with the following command.
+
+```bash
+pip install copier copier-templates-extensions
+```
 
 ### Generate the metarepo structure
 
