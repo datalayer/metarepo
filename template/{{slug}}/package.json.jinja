@@ -3,7 +3,7 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "packages/jupyter-ui/packages/react"
+    {% if "jupyter-ui" in repos %}"packages/jupyter-ui/packages/react"{% endif %}
   ],
   "scripts": {
     "build": "lerna run --concurrency 1 build",

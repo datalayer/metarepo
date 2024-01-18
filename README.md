@@ -2,69 +2,35 @@
 
 [![Become a Sponsor](https://img.shields.io/static/v1?label=Become%20a%20Sponsor&message=%E2%9D%A4&logo=GitHub&style=flat&color=1ABC9C)](https://github.com/sponsors/datalayer)
 
-# Ξ Metarepo for Datalayer
+# Ξ Metarepo template for Datalayer
 
-This repository is a scaffolding that allows to simultaneously develop on multiple repositories. It will clone  a list of independent repositories under the `package` folder and will create with [Lerna.js](https://lerna.js.org) the needed links so a change in `repository x` will be visible by `repository y`.
+This repository serves as a [Copier](https://copier.readthedocs.io/en/stable/) template designed to generate a scaffolding project that allows to simultaneously develop on multiple repositories. This **metarepo** will, then, allow you to clone a list of independent repositories under the `package` folder and will create with [Lerna.js](https://lerna.js.org) the needed links so a change in `repository x` will be visible by `repository y`.
 
 This is particularly useful for JavaScript and TypeScript based projects, and we use it at Datalayer to simultaneously develop on many JupyterLab extensions (mixed Typescript and Python repositories).
 
-For now, we don't intend to add `git submodule` related features, although this is being discussed in https://github.com/datalayer/metarepo/issues/2.
+> [!NOTE]  
+> While the current version does not include features related to `git submodule`, ongoing discussions about this enhancement can be found [here](https://github.com/datalayer/metarepo/issues/2).
 
 ## Usage
 
-The primary usage at Datalayer being JupyterLab development, we rely on [Yarn 3](https://yarnpkg.com) and Python. To start setting up your environment follow the instructions hereunder.
+The following section provides a step-by-step guide on how to generate your scaffolding project.
 
-First, clone this repository.
+### Install Copier
 
-```bash
-# Clone the metarepo repository.
-git clone https://github.com/datalayer/metarepo.git
-cd metarepo
-```
+Ensure that Copier is correctly installed by following the instructions in the [official documentation](https://copier.readthedocs.io/en/stable/#installation).
 
-Then, create your environment. You will need [MiniConda](https://docs.conda.io/en/latest/miniconda.html)
+### Generate the metarepo structure
+
+Generate the project using the command provided below. Be sure to replace `<path/to/desired/location>` with your chosen project location.
 
 ```bash
-# Create and activate the conda environment.
-conda env create -n datalayer -f ./environment.yml
-conda activate datalayer
+copier copy --trust https://github.com/datalayer/metarepo.git <path/to/desired/location>
 ```
 
-[MicroMamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html) is an alternative to Conda.
+This command initiates a series of prompts to configure the project based on your preferences.
 
-```bash
-# Create and activate the mamba environment.
-micromamba env create -y -n datalayer -f ./environment.yml
-micromamba activate datalayer
-```
+### Finalize
 
-After creating and activating your virtual environment, update the [metarepo](https://github.com/datalayer/metarepo/blob/main/metarepo#L10) file to list the public and private repositories you intend to work on.
-
-```bash
-# Clone the listed repositories.
-./metarepo clone
-```
-
-Review the `patches` folder and put there any patch you would need for the `node_modules` packages.
-
-Install the npm dependencies.
-
-```bash
-yarn build
-```
-
-Build.
-
-```bash
-yarn build
-```
-
-You can also watch.
-
-```bash
-yarn watch
-```
-
-Add any other command in the root `package.json`.
+Complete the setup of your scaffolding project by referring to the instructions outlined in the README of the newly generated project.
 
 Happy metarepo! 🚀
