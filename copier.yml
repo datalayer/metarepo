@@ -14,14 +14,16 @@ project_name:
 repos:
     type: str
     choices:
-        datalayer (pubic): datalayer
-        jupyter-kernels (private): jupyter-kernels
-        jupyter-iam (private): jupyter-iam
-        jupyter-ui (public): jupyter-ui
         clouder (public): clouder
-        jupyter-manager (public): jupyter-manager
+        datalayer (pubic): datalayer
+        icons (pubic): icons
         jupyter-dashboard (public): jupyter-dashboard
+        jupyter-iam (private): jupyter-iam
+        jupyter-kernels (private): jupyter-kernels
+        jupyter-manager (public): jupyter-manager
+        jupyter-ui (public): jupyter-ui
         jupyter-viewer (public): jupyter-viewer
+        primer-addons (public): primer-addons
     help: Choose the repositories you intend to work on. Please be aware that the options encompass private repositories. If you opt for private repositories, ensure you possess the necessary permissions to clone them; otherwise, you won't be able to establish the required links. 
     multiselect: true
 
