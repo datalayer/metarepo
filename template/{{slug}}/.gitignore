@@ -6,7 +6,6 @@
 # Exclude
 .yarn
 node_modules
-yarn.lock
 # git ignored path are ignored by lerna
 # @see https://github.com/lerna/lerna/issues/3416
 # packages/*
