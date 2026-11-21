@@ -1,8 +1,8 @@
-[![Datalayer](https://assets.datalayer.tech/datalayer-25.svg)](https://datalayer.io)
+[![Datalayer](https://images.datalayer.io/legacy/datalayer-25.svg)](https://datalayer.ai)
 
 [![Become a Sponsor](https://img.shields.io/static/v1?label=Become%20a%20Sponsor&message=%E2%9D%A4&logo=GitHub&style=flat&color=1ABC9C)](https://github.com/sponsors/datalayer)
 
-# Ξ Metarepo for Datalayer
+# ☰ Metarepo for Datalayer
 
 This **metarepo** serves as a foundational framework facilitating the simultaneous development across multiple repositories. By cloning independent repositories into the `package` folder and utilizing [Lerna.js](https://lerna.js.org), it establishes the necessary inter-repository links. This ensures that a modification in one repository, such as `repository x`, becomes immediately visible in `repository y`.
 
@@ -24,7 +24,7 @@ Ensure that you are in the metarepo's working directory
 
 ### Create the environment
 
-To create your environment, you will need [MiniConda](https://docs.conda.io/en/latest/miniconda.html):
+To create your environment, you will need [conda](https://docs.conda.io/en/latest/conda.html):
 
 ```bash
 # Create and activate the conda environment.
@@ -32,12 +32,12 @@ conda env create -n datalayer -f ./environment.yml
 conda activate datalayer
 ```
 
-Alternatively, you can use [MicroMamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html):
+Alternatively, you can use [conda](https://mamba.readthedocs.io/en/latest/installation/conda-installation.html):
 
 ```bash
 # Create and activate the mamba environment.
-micromamba env create -y -n datalayer -f ./environment.yml
-micromamba activate datalayer
+conda env create -y -n datalayer -f ./environment.yml
+conda activate datalayer
 ```
 
 ### [Optional] Add pacthes
@@ -55,13 +55,13 @@ OR execute the following commands yourself:
 ```bash
 ./metarepo clone
 yarn
-yarn build
+npm run build
 ```
 
 > [!WARNING]  
-> In some cases, Yarn does not seem to manage correctly the dependencies between projects. You will, therefore, have to run `yarn build` multiple times, or build manually, in the right order, each repository from the `packages` subfolder.
+> In some cases, Yarn does not seem to manage correctly the dependencies between projects. You will, therefore, have to run `npm run build` multiple times, or build manually, in the right order, each repository from the `packages` subfolder.
 
-For continuous development, use `yarn watch`, serving as an alias for `lerna watch` as defined in `package.json`.
+For continuous development, use `npm watch`, serving as an alias for `lerna watch` as defined in `package.json`.
 
 > [!NOTE]  
 > Feel free to incorporate additional commands in the root `package.json` as per your project requirements.

@@ -4,9 +4,9 @@
 SHELL=/bin/bash
 
 MAMBA=source ~/.bash_profile
-# MAMBA_ACTIVATE=eval "$(micromamba shell hook --shell=bash)"; micromamba activate
-MAMBA_DEACTIVATE=micromamba deactivate
-# MAMBA_REMOVE=micromamba remove -y --all -n
+# MAMBA_ACTIVATE=eval "$(conda shell hook --shell=bash)"; conda activate
+MAMBA_DEACTIVATE=conda deactivate
+# MAMBA_REMOVE=conda remove -y --all -n
 
 CONDA=source ~/.bash_profile
 # CONDA_ACTIVATE=source $$(conda info --base)/etc/profile.d/conda.sh ; conda activate ; conda activate
@@ -23,11 +23,11 @@ default: all ## Default target is all
 
 mamba-env: ## Create a mamba env
 	@($(MAMBA); \
-		micromamba env create -y -n ${ENV_NAME} -f ./environment.yml)
+		conda env create -y -n ${ENV_NAME} -f ./environment.yml)
 
 mamba-env-rm: ## Deactivate and remove mamba env
 	@($(MAMBA); $(MAMBA_DEACTIVATE) && \
-		micromamba remove -y --name ${ENV_NAME} --all || true )
+		conda remove -y --name ${ENV_NAME} --all || true )
 
 conda-env: ## Create a conda env
 	@($(CONDA); \
@@ -47,7 +47,7 @@ install: ## Yarn install
 
 build: ## Yarn build
 	@echo "#################################### YARN BUILD ###################################"
-	@yarn build
+	@npm run build
 
 all: ## Clone, install and build
 	@$(MAKE) clone

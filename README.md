@@ -1,8 +1,8 @@
-[![Datalayer](https://assets.datalayer.tech/datalayer-25.svg)](https://datalayer.io)
+[![Datalayer](https://images.datalayer.io/legacy/datalayer-25.svg)](https://datalayer.ai)
 
 [![Become a Sponsor](https://img.shields.io/static/v1?label=Become%20a%20Sponsor&message=%E2%9D%A4&logo=GitHub&style=flat&color=1ABC9C)](https://github.com/sponsors/datalayer)
 
-# Ξ Metarepo template for Datalayer
+# ☰ Metarepo template for Datalayer
 
 This repository serves as a [Copier](https://copier.readthedocs.io/en/stable/) template designed to generate a scaffolding project that allows to simultaneously develop on multiple repositories. This **metarepo** will, then, allow you to clone a list of independent repositories under the `package` folder and will create with [Lerna.js](https://lerna.js.org) the needed links so a change in `repository x` will be visible by `repository y`.
 
